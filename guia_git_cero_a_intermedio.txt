@@ -1,0 +1,74 @@
+Guía práctica de Git: De Cero a Intermedio
+
+1. ¿Qué es Git?
+   Git es un sistema de control de versiones distribuido que permite a múltiples personas trabajar en un mismo proyecto
+   de forma segura, manteniendo un historial de cambios.
+
+2. Instalación de Git:
+   - Windows: Descargar desde https://git-scm.com/download/win
+   - Linux: sudo apt install git (Debian/Ubuntu) o sudo dnf install git (Fedora)
+   - macOS: brew install git (si tienes Homebrew)
+
+3. Configuración inicial (usuario y correo):
+   Estos datos aparecerán en tus commits.
+   git config --global user.name "Tu Nombre"
+   git config --global user.email "tuemail@example.com"
+   Verificar configuración:
+   git config --list
+
+4. Crear un repositorio nuevo:
+   mkdir mi_proyecto
+   cd mi_proyecto
+   git init
+
+5. Clonar un repositorio existente:
+   git clone URL_DEL_REPOSITORIO
+
+6. Comandos básicos:
+   - git status      -> Ver estado de archivos
+   - git add archivo -> Añadir archivo al área de preparación
+   - git commit -m "Mensaje" -> Confirmar cambios
+   - git push        -> Enviar cambios al repositorio remoto
+   - git pull        -> Traer cambios del remoto
+   - git log         -> Ver historial de commits
+
+7. Trabajar con ramas:
+   - git branch                  -> Listar ramas
+   - git branch nombre_rama      -> Crear nueva rama
+   - git checkout nombre_rama    -> Cambiar de rama
+   - git checkout -b nueva_rama  -> Crear y cambiar en un solo paso
+   - git merge otra_rama         -> Unir cambios de otra rama en la actual
+
+8. Resolver conflictos:
+   - Ocurre cuando dos cambios afectan la misma línea.
+   - Git marcará el conflicto en el archivo (<<<<<<<, =======, >>>>>>>).
+   - Edita el archivo para dejar la versión correcta.
+   - Guarda, luego: git add archivo_conflicto y git commit
+
+9. Ignorar archivos innecesarios (.gitignore):
+   Crea un archivo llamado `.gitignore` y añade patrones:
+   node_modules/
+   *.log
+   .env
+
+10. Comandos intermedios:
+   - git stash         -> Guarda cambios no confirmados temporalmente
+   - git stash pop     -> Recupera cambios guardados con stash
+   - git rebase rama   -> Reorganiza commits sobre otra rama
+   - git tag v1.0      -> Crear etiqueta (marcar versión)
+
+11. Enlazar repositorio local con remoto:
+   - git remote add origin URL_DEL_REPOSITORIO
+   - git branch -M main
+   - git push -u origin main
+
+12. Buenas prácticas:
+   - Hacer commits pequeños y con mensajes claros.
+   - Usar ramas para nuevas características o correcciones.
+   - Sincronizar frecuentemente con el remoto (git pull).
+   - Mantener .gitignore actualizado.
+
+13. Recursos adicionales:
+   - Documentación oficial: https://git-scm.com/doc
+   - Pro Git Book (gratis): https://git-scm.com/book/es/v2
+   - Git Cheatsheet: https://education.github.com/git-cheat-sheet-education.pdf
